@@ -1,11 +1,14 @@
-Установка:
-  1. Скачайте исходный код. В терминале пропишите **git clone https://github.com/Yerden01/telegram-avatar-time.git**
+How to install:
+  1. Download code or clone it: **git clone https://github.com/Yerden01/telegram-avatar-time.git**
 
-Для успешного запуска необходимо:
+You need linux server:
 
-  0. Запускать на ubuntu, проверено на 20.04
-  1. В файле config/config.py изменить реквизиты api на свои. Свои реквизиты можно получить по инструкции https://docs.telethon.dev/en/latest/basic/signing-in.html
-  2. В файле main.py поправить часовой пояс по умолчанию
-  3. sudo ./run.sh. Следовать инструкциям
+  0. I used Ubuntu 18.04
+  1. Change config/config.py api data to your own. Your api data you can take here: https://my.telegram.org/apps
+  2. Change timezone to yours in main.py (now it is Asia/Almaty)
+  3. Then run: sudo ./run.sh. 
 
-Выражаем благодарность Krock21rus, mumtozvalijonov
+Thanks to Krock21rus, mumtozvalijonov
+
+Took code from here and made some changes
+https://habr.com/ru/post/457078/
