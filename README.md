@@ -4,7 +4,7 @@ How to install:
 You need linux server:
 
   0. I used Ubuntu 18.04
-  1. Change config/config.py api data to your own. Your api data you can take here: https://docs.telethon.dev/en/latest/basic/signing-in.html
+  1. Change config/config.py api data to your own. Your api data you can take here: https://my.telegram.org/apps
   2. Change timezone to yours in main.py (now it is Asia/Almaty)
   3. Then run: sudo ./run.sh. 
 
