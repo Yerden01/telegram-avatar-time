@@ -20,7 +20,7 @@ def generate_time_image_bytes(dt):
     text = convert_time_to_string(dt)
     img = get_black_background()
 
-    fontpath = "./digital-7.ttf"
+    fontpath = "./fonts/digital-7.ttf"
 
     b,g,r,a = 0,255,0,0
 
