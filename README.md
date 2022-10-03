@@ -6,9 +6,10 @@ You need linux server:
   0. I used Ubuntu 18.04
   1. Change config/config.py api data to your own. Your api data you can take here: https://my.telegram.org/apps
   2. Change timezone to yours in main.py (now it is Asia/Almaty)
-  3. Then run: sudo ./run.sh. 
+  3. You have to add run.sh to write and executing access: chmod +x run.sh
+  4. Then run this command to install all the requirements and run python script: sudo ./run.sh.
+  5.(optional). If you close terminal, it won't work, to make it work run: nohup python3 main.py
 
 Thanks to Krock21rus, mumtozvalijonov
 
-Took code from here and made some changes
-https://habr.com/ru/post/457078/
+Link to Habr Post: https://habr.com/ru/post/457078/

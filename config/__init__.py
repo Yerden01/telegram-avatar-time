@@ -1,3 +1,3 @@
-from .config import api_id, api_hash
+from .config import users
 
-__all__ = ['api_id', 'api_hash']
+__all__ = ['users']
