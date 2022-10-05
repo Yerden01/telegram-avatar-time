@@ -2,7 +2,7 @@ import time
 from telethon import TelegramClient
 from telethon.tl.functions.photos import UploadProfilePhotoRequest, DeletePhotosRequest
 from config import users
-from utils import time_has_changed, generate_time_image_bytes
+from utils import time_has_changed, generate_time_image_bytes, generate_video
 from datetime import datetime, timedelta
 import argparse
 import pytz
@@ -38,12 +38,19 @@ async def main():
 
     while True:
         if time_has_changed(prev_update_time):
-            bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
 
-            for client in clients:
-                await client(DeletePhotosRequest(await client.get_profile_photos('me')))
-                file = await client.upload_file(bts)
-                await client(UploadProfilePhotoRequest(file))
+            for ind in range(len(clients)):
+                client = clients[ind]
+                if users[ind][3] == 'video':
+                    generate_video(datetime.now(args.tz).replace(tzinfo=None))
+                    await client(DeletePhotosRequest(await client.get_profile_photos('me')))
+                    file = await client.upload_file('./utils/test.mp4')
+                    await client(UploadProfilePhotoRequest(video=file))
+                else:
+                    bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
+                    await client(DeletePhotosRequest(await client.get_profile_photos('me')))
+                    file = await client.upload_file(bts)
+                    await client(UploadProfilePhotoRequest(file))
 
             prev_update_time = datetime.now()
             time.sleep(1)
