@@ -47,6 +47,7 @@ async def main():
                     file = await client.upload_file('./utils/test.mp4')
                     await client(UploadProfilePhotoRequest(video=file))
                 else:
+                    print('started changing image')
                     bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
                     await client(DeletePhotosRequest(await client.get_profile_photos('me')))
                     file = await client.upload_file(bts)
