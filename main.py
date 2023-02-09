@@ -49,9 +49,12 @@ async def main():
                 else:
                     print('started changing image')
                     bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
+                    print('started deleting images before')
                     await client(DeletePhotosRequest(await client.get_profile_photos('me')))
+                    print('deleted images, started uploading file')
                     file = await client.upload_file(bts)
                     await client(UploadProfilePhotoRequest(file))
+                    print('finished')
 
             prev_update_time = datetime.now()
             time.sleep(1)
