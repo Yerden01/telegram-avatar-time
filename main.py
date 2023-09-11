@@ -53,7 +53,7 @@ async def main():
                     await client(DeletePhotosRequest(await client.get_profile_photos('me')))
                     print('deleted images, started uploading file')
                     file = await client.upload_file(bts)
-                    await client(UploadProfilePhotoRequest(file))
+                    await client(UploadProfilePhotoRequest(file=file))
                     print('finished')
 
             prev_update_time = datetime.now()
